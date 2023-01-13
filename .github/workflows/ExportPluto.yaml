@@ -39,6 +39,9 @@ jobs:
 
 
             - name: Run & export Pluto notebooks
+              run: julia --project -e "import Pkg; Pkg.update(); Pkg.instantiate()"
+
+            - name: Run & export Pluto notebooks
               run: |
                 julia -e 'using Pkg
                   Pkg.activate(mktempdir())
