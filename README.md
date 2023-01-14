@@ -9,8 +9,6 @@ https://unistuttgart-ikr.github.io/MINDFulNotebookExamples.jl/
 `Manifest.toml` is checked in since some still unregistered/forked repositories are required:
 - MINDFul https://github.com/UniStuttgart-IKR/MINDFul.jl#main
 - MINDFulMakie https://github.com/UniStuttgart-IKR/MINDFulMakie.jl#main
-- NestedGraphs https://github.com/UniStuttgart-IKR/NestedGraphs.jl#main
--- Under registration https://github.com/JuliaRegistries/General/pull/75518#issuecomment-1379256146
 - NestedGraphMakie https://github.com/UniStuttgart-IKR/NestedGraphMakie.jl#main
 - NestedGraphsIO https://github.com/UniStuttgart-IKR/NestedGraphsIO.jl#main
 - GraphIO https://github.com/filchristou/GraphIO.jl#typedefreqmov
