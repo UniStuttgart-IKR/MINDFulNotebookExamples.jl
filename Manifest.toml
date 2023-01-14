@@ -2,7 +2,7 @@
 
 julia_version = "1.8.4"
 manifest_format = "2.0"
-project_hash = "5ea55b65c506cb86c614b1f3ec6ce2e04b3847eb"
+project_hash = "8e61f13b5f31492a909006315ab46f1236ee3f3c"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra"]
@@ -99,12 +99,6 @@ git-tree-sha1 = "4b859a208b2397a7a623a03449e4636bdb17bcf2"
 uuid = "83423d85-b0ee-5818-9007-b63ccbeb887a"
 version = "1.16.1+1"
 
-[[deps.Calculus]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "f641eb0a4f00c343bbc32346e1217b86f3ce9dad"
-uuid = "49dc2e85-a5d0-5ad3-a950-438e2897f1b9"
-version = "0.5.1"
-
 [[deps.ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
 git-tree-sha1 = "e7ff6cadf743c098e08fca25c91103ee4303c9bb"
@@ -193,11 +187,11 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 deps = ["Mmap"]
 uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 
-[[deps.DensityInterface]]
-deps = ["InverseFunctions", "Test"]
-git-tree-sha1 = "80c3e8639e3353e5d2912fb3a1916b8455e2494b"
-uuid = "b429d917-457f-4dbc-8f4c-0cc954292b1d"
-version = "0.4.0"
+[[deps.DiscreteEvents]]
+deps = ["DataStructures", "Distributions", "Logging", "Random", "Unitful"]
+git-tree-sha1 = "fe5d419f595eaf44a563325e30aaf2a286fe8c0c"
+uuid = "127e53a7-d08a-4bd9-afb0-daf0d2b65a85"
+version = "0.3.4"
 
 [[deps.Distances]]
 deps = ["LinearAlgebra", "SparseArrays", "Statistics", "StatsAPI"]
@@ -210,10 +204,10 @@ deps = ["Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[deps.Distributions]]
-deps = ["ChainRulesCore", "DensityInterface", "FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns", "Test"]
-git-tree-sha1 = "74911ad88921455c6afcad1eefa12bd7b1724631"
+deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns"]
+git-tree-sha1 = "a837fdf80f333415b69684ba8e8ae6ba76de6aaa"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.25.80"
+version = "0.24.18"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
@@ -225,12 +219,6 @@ version = "0.9.3"
 deps = ["ArgTools", "FileWatching", "LibCURL", "NetworkOptions"]
 uuid = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 version = "1.6.0"
-
-[[deps.DualNumbers]]
-deps = ["Calculus", "NaNMath", "SpecialFunctions"]
-git-tree-sha1 = "5837a837389fccf076445fce071c8ddaea35a566"
-uuid = "fa6b7ba4-c1ee-5f82-b5fc-ecf0adba8f74"
-version = "0.6.8"
 
 [[deps.EarCut_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -289,10 +277,10 @@ version = "1.16.0"
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FillArrays]]
-deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "9a0472ec2f5409db243160a8b030f94c380167a3"
+deps = ["LinearAlgebra", "Random", "SparseArrays"]
+git-tree-sha1 = "693210145367e7685d8604aee33d9bfb85db8b31"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "0.13.6"
+version = "0.11.9"
 
 [[deps.FixedPointNumbers]]
 deps = ["Statistics"]
@@ -348,9 +336,9 @@ version = "0.1.2"
 
 [[deps.GeoInterface]]
 deps = ["Extents"]
-git-tree-sha1 = "fb28b5dc239d0174d7297310ef7b84a11804dfab"
+git-tree-sha1 = "e315c4f9d43575cf6b4e511259433803c15ebaa2"
 uuid = "cf35fbd7-0cd7-5166-be24-54bfbe79505f"
-version = "1.0.1"
+version = "1.1.0"
 
 [[deps.GeometryBasics]]
 deps = ["EarCut_jll", "GeoInterface", "IterTools", "LinearAlgebra", "StaticArrays", "StructArrays", "Tables"]
@@ -420,12 +408,6 @@ deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll",
 git-tree-sha1 = "129acf094d168394e80ee1dc4bc06ec835e510a3"
 uuid = "2e76f6c2-a576-52d4-95c1-20adfe4de566"
 version = "2.8.1+1"
-
-[[deps.HypergeometricFunctions]]
-deps = ["DualNumbers", "LinearAlgebra", "OpenLibm_jll", "SpecialFunctions", "Test"]
-git-tree-sha1 = "709d864e3ed6e3545230601f94e11ebc65994641"
-uuid = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
-version = "0.3.11"
 
 [[deps.Hyperscript]]
 deps = ["Test"]
@@ -680,7 +662,7 @@ version = "0.1.4"
 
 [[deps.MINDFul]]
 deps = ["AbstractTrees", "Distances", "DocStringExtensions", "Graphs", "IterTools", "MetaGraphs", "MetaGraphsNext", "NestedGraphs", "UUIDs", "Unitful"]
-git-tree-sha1 = "33ac9206a6cd88bf6dc2b2507213ace7bfb4f2de"
+git-tree-sha1 = "f09197c036a22e3f369fe3ae86c333011c7b3589"
 repo-rev = "main"
 repo-url = "https://github.com/UniStuttgart-IKR/MINDFul.jl"
 uuid = "437ce7a4-cd80-4539-9a29-b274cfe157d6"
@@ -688,7 +670,7 @@ version = "0.1.0"
 
 [[deps.MINDFulMakie]]
 deps = ["AbstractTrees", "Colors", "DocStringExtensions", "GraphMakie", "Graphs", "MINDFul", "Makie", "MetaGraphs", "MetaGraphsNext", "NestedGraphMakie", "NestedGraphs", "NetworkLayout"]
-git-tree-sha1 = "0da07efd42745f5e95945d43fd5e01e9526f938e"
+git-tree-sha1 = "8461572e5ded323f86bf2424ee383089dfa550df"
 repo-rev = "main"
 repo-url = "https://github.com/UniStuttgart-IKR/MINDFulMakie.jl"
 uuid = "23b02573-35f2-499b-a490-fd32d1f018b6"
@@ -745,11 +727,9 @@ version = "2.28.0+0"
 
 [[deps.MetaGraphs]]
 deps = ["Graphs", "JLD2", "Random"]
-git-tree-sha1 = "d7c018926842b9b721c12fa2d1c78abd32d496c6"
-repo-rev = "fixIssue29"
-repo-url = "https://github.com/filchristou/MetaGraphs.jl"
+git-tree-sha1 = "1130dbe1d5276cb656f6e1094ce97466ed700e5a"
 uuid = "626554b9-1ddb-594c-aa3c-2596fe9399a5"
-version = "0.7.1"
+version = "0.7.2"
 
 [[deps.MetaGraphsNext]]
 deps = ["Graphs", "JLD2"]
@@ -1059,9 +1039,9 @@ version = "0.7.0"
 
 [[deps.SIMD]]
 deps = ["SnoopPrecompile"]
-git-tree-sha1 = "34edfe91375e5883875987e740c554b92c48fc41"
+git-tree-sha1 = "8b20084a97b004588125caebf418d8cab9e393d1"
 uuid = "fdea26ae-647d-5447-a871-4b548cad5224"
-version = "3.4.3"
+version = "3.4.4"
 
 [[deps.ScanByte]]
 deps = ["Libdl", "SIMD"]
@@ -1133,9 +1113,9 @@ uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[deps.SpecialFunctions]]
 deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
-git-tree-sha1 = "d75bda01f8c31ebb72df80a46c88b25d1c79c56d"
+git-tree-sha1 = "5d65101b2ed17a8862c4c05639c3ddc7f3d791e1"
 uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
-version = "2.1.7"
+version = "1.8.7"
 
 [[deps.StableHashTraits]]
 deps = ["CRC32c", "Compat", "Dates", "SHA", "Tables", "TupleTools", "UUIDs"]
@@ -1177,10 +1157,10 @@ uuid = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 version = "0.33.21"
 
 [[deps.StatsFuns]]
-deps = ["ChainRulesCore", "HypergeometricFunctions", "InverseFunctions", "IrrationalConstants", "LogExpFunctions", "Reexport", "Rmath", "SpecialFunctions"]
-git-tree-sha1 = "ab6083f09b3e617e34a956b43e9d51b824206932"
+deps = ["ChainRulesCore", "InverseFunctions", "IrrationalConstants", "LogExpFunctions", "Reexport", "Rmath", "SpecialFunctions"]
+git-tree-sha1 = "5950925ff997ed6fb3e985dcce8eb1ba42a0bbe7"
 uuid = "4c63d2b9-4356-54db-8cca-17b64c39e42c"
-version = "1.1.1"
+version = "0.9.18"
 
 [[deps.StructArrays]]
 deps = ["Adapt", "DataAPI", "GPUArraysCore", "StaticArraysCore", "Tables"]
