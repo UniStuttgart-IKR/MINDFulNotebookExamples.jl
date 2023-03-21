@@ -13,3 +13,8 @@ NestedGraphs = "03c36417-ddab-428a-818d-5359aee292ef"
 NestedGraphsIO = "4bcdce80-1129-4e34-b1b9-f101712b434d"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+
+[compat]
+julia = "1.8"
+MINDFul = "0.2"
+NestedGraphMakie = "0.1"
