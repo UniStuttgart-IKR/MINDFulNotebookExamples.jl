@@ -10,9 +10,6 @@ import Pkg
 # ╔═╡ 7f5da610-0fcc-4000-ae2d-55c404b95cc5
 Pkg.activate(".")
 
-# ╔═╡ be5b7ae1-9c25-4fbe-b448-7eb91fbc063b
-using Revise
-
 # ╔═╡ 97de85e8-6efd-4153-943f-794a003797f4
 using MINDFul, GraphIO, NestedGraphsIO, NestedGraphs, Graphs, MetaGraphs
 
@@ -310,7 +307,6 @@ Future efforts will focus on facilitating the interface and making it more user 
 # ╟─33f1d64a-0c07-4cfd-a901-7e9a2b4adf4a
 # ╟─9a460ae7-a468-489e-a0ff-93507a68a793
 # ╟─294ead79-e37e-4619-b192-88e9643f00cd
-# ╠═be5b7ae1-9c25-4fbe-b448-7eb91fbc063b
 # ╠═442e4738-9246-11ed-18bc-3d0b1c400eca
 # ╠═7f5da610-0fcc-4000-ae2d-55c404b95cc5
 # ╟─8fe8e74b-c5d0-4da0-8572-f43a8a6abbcd
