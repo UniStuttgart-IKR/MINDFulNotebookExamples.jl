@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.22
+# v0.19.26
 
 using Markdown
 using InteractiveUtils
@@ -74,7 +74,7 @@ md"To get the IBNs with the topology"
 # ╔═╡ d9853453-888e-4069-9e02-035572e9533d
 function ibn4nets()
 	globalnet = open("data/4nets.graphml") do io
-		loadgraph(io, "global-network", GraphMLFormat(), NestedGraphs.NestedGraphFormat())
+		loadgraph(io, "global-network", GraphIO.GraphML.GraphMLFormat(), NestedGraphs.NestedGraphFormat())
 	end
 	simgraph = MINDFul.simgraph(globalnet; 
 								distance_method = MINDF.euclidean_dist,
@@ -399,7 +399,7 @@ end
 # ╟─60957c65-faa0-48d9-b476-06bdafe44a20
 # ╟─1b5c672d-f785-4e16-8a14-0b306d15b860
 # ╠═9c5fdea2-f5f9-4c93-92c4-a6d2de6d55f1
-# ╠═ba3d88a4-190d-4977-aca9-d24e66c05dd9
+# ╟─ba3d88a4-190d-4977-aca9-d24e66c05dd9
 # ╠═554131f0-ce84-40fb-94e1-1972e9680e6a
 # ╟─6efedc71-ec6f-4d60-83f0-4ea6c5a03f7f
 # ╠═f8f45109-976d-4bcc-a526-6ed88f51f24f

@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.22
+# v0.19.26
 
 using Markdown
 using InteractiveUtils
@@ -166,7 +166,7 @@ myibns =
 let
 	# read in the NestedGraph
 	globalnet = open(joinpath("data/4nets.graphml")) do io
-	    loadgraph(io, "global-network", GraphMLFormat(), NestedGraphs.NestedGraphFormat())
+	    loadgraph(io, "global-network", GraphIO.GraphML.GraphMLFormat(), NestedGraphs.NestedGraphFormat())
 	end
 	
 	# convert it to a NestedGraph compliant with the simulation specifications
