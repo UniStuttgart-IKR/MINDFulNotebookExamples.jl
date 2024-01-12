@@ -917,8 +917,8 @@ uuid = "23b02573-35f2-499b-a490-fd32d1f018b6"
 version = "0.1.0"
 
 [[deps.MINDFulPlutoGUI]]
-deps = ["GraphIO", "Graphs", "HypertextLiteral", "MINDFul", "MINDFulMakie", "MetaGraphs", "NestedGraphs", "NestedGraphsIO", "PlutoUI", "Unitful", "WGLMakie"]
-git-tree-sha1 = "47e10e206dc439b5d15d7bc3b97cf1e2872a1074"
+deps = ["GraphIO", "Graphs", "HypertextLiteral", "MINDFul", "MINDFulMakie", "MetaGraphs", "NestedGraphs", "NestedGraphsIO", "Pluto", "PlutoUI", "Revise", "Unitful", "WGLMakie"]
+git-tree-sha1 = "a8174d708ffb7ce4cefb3f1bc584687db4d746b7"
 repo-rev = "main"
 repo-url = "https://github.com/UniStuttgart-IKR/MINDFulPluto.jl"
 uuid = "2169b6f5-785b-460d-ad6a-2192ac02d426"
