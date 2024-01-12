@@ -1,26 +1,9 @@
-// @path-json can be an object or an array, the first will be loaded directly, and the object from the array will be randomly selected
-/* tsParticles.load(@params); */
+function sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
 
-
-// (async () => {
-//     await loadTrianglesPreset(tsParticles); // this is required only if you are not using the bundle script
-//
-//     await tsParticles.load("tsparticles", {
-//         particles: {
-//             shape: {
-//                 type: "square", // starting from v2, this require the square shape script
-//             },
-//
-//         },
-//
-//
-//         preset: "triangles",
-//     });
-// })();
-
-
-(async () => {
-    await loadLinksPreset(tsParticles); // this is required only if you are not using the bundle script
+const load_tsparticles = async () => {
+    await loadLinksPreset(tsParticles);
 
     await tsParticles.load("tsparticles", {
         fullScreen: {
@@ -168,36 +151,61 @@
         },
         preset: "links",
     });
-})();
-
-// (async () => {
-//     await tsParticles.load({
-//         id: "tsparticles",
-//         url: "static/index/particles.json",
-//     });
-// })();
+};
 
 
-//the second one
-// Important! If the index is not in range 0...<array.length, the index will be ignored.
+const wrapper = async () => {
+    while (true) {
+        try {
+            await load_tsparticles();
+            break;
+        }
+        catch (e) {
+            console.log(e);
 
-// after initialization this can be used.
+            if (e instanceof TypeError) {
+                console.log("TypeError, inserting again!");
 
-/* tsParticles.setOnClickHandler(@callback); */
+                var body = document.getElementsByTagName("body")[0];
 
-/* this will be fired from all particles loaded */
+                //get src of scripts
+                src = [];
+                for (var i = 0; i < body.getElementsByTagName("script").length; i++) {
+                    // if tsparticles in src
+                    if (body.getElementsByTagName("script")[i].src.includes("tsparticles")) {
+                        body.removeChild(body.getElementsByTagName("script")[i]);;
+                    }
+                }
 
-// tsParticles.setOnClickHandler((event, particles) => {
-//     /* custom on click handler */
-// });
+                var body = document.querySelector("body");
 
-// now you can control the animations too, it's possible to pause and resume the animations
-// these methods don't change the config so you're safe with all your configurations
-// domItem(0) returns the first tsParticles instance loaded in the dom
-const particles = tsParticles.domItem(0);
+                var scripts = ["https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-interaction-particles-links@2/tsparticles.interaction.particles.links.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2/tsparticles.shape.circle.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2/tsparticles.updater.color.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2/tsparticles.updater.opacity.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-updater-out-modes@2/tsparticles.updater.out-modes.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2/tsparticles.updater.size.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-preset-triangles@2/tsparticles.preset.triangles.min.js",
+                    "https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2/tsparticles.preset.links.min.js"];
 
-// play will start the animations, if the move is not enabled it won't enable it, it just updates the frame
-particles.play();
+                scripts.forEach((script, i) => {
+                    var script = document.createElement("script");
+                    script.src = scripts[i];
+                    body.appendChild(script);
+                });
+            }
 
-// pause will stop the animations
-particles.pause();
+
+
+            await sleep(10);
+
+        }
+    }
+};
+
+wrapper();
+
+
