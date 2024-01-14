@@ -12,7 +12,15 @@ https://unistuttgart-ikr.github.io/MINDFulNotebookExamples.jl/
 - NestedGraphsIO https://github.com/UniStuttgart-IKR/NestedGraphsIO.jl#main
   - will eventually be integrated in GraphIO.jl https://github.com/JuliaGraphs/GraphIO.jl/pull/55
 
-You can `Pkg.update()` to update the environment to the latest versions.
+You can `Pkg.instantiate()` to replicate the environment to a guaranteed working version.
 With time, the `Manifest.toml` will not be needed, either because everything will be in the public registry or because of https://github.com/JuliaLang/Pkg.jl/issues/492.
 
-To run the notebooks, clone this repository (to retrieve the environemnt), start Pluto.jl from your general environment, and then open the notebooks.
+To run the notebooks
+- clone this repository and retrieve the environemnt
+- execute `Pkg.instantiate()` to replicate the environment
+- start Pluto.jl from your general environment
+- open the desired notebook
+
+## JuliaCon 2024 (proposal)
+The work on the `plutodash.jl` notebook is relevant to an applied JuliaCon2024 talk.
+Refinements will happen in the following months and prior to the conference.
