@@ -52,15 +52,17 @@ begin
         _n1_sn = @bind arg_domain_1 MINDFulPlutoGUI.get_html_select("domain_selection_select", "Domain 1", ["1", "2", "3", "7"])
         _n2_sn = @bind arg_domain_2 MINDFulPlutoGUI.get_html_select("domain_selection_select", "Domain 2", ["1", "2", "3", "7"])
 
-        create_intent_bind = @bind create_intent MINDFulPlutoGUI.get_html_button("create_intent_button", "Create Intent", "add_toast_to_div('MINDFulPluto.jl', 'Intent created.')")
+        create_intent_bind = @bind create_intent MINDFulPlutoGUI.get_html_button("create_intent_button", "Create Intent")
         _topology = @bind topology MINDFulPlutoGUI.get_html_select("topology_select", "Topology", ["4nets", "nobel-germany", "nobel-germany-france-topzoo"], "topology_select")
 
         compile_button_bind = @bind compile_button MINDFulPlutoGUI.get_html_button("compile_button", "Compile", "add_toast_to_div('MINDFulPluto.jl', 'Compiling intent...')")
-        uncompile_button_bind = @bind uncompile_button MINDFulPlutoGUI.get_html_button("uncompile_button", "Uncompile", "add_toast_to_div('MINDFulPluto.jl', 'Uncompiling intent...')")
+        uncompile_button_bind = @bind uncompile_button MINDFulPlutoGUI.get_html_button("uncompile_button", "Uncompile")
         install_button_bind = @bind install_button MINDFulPlutoGUI.get_html_button("install_button", "Install", "add_toast_to_div('MINDFulPluto.jl', 'Installing intent...')")
-        uninstall_button_bind = @bind uninstall_button MINDFulPlutoGUI.get_html_button("uninstall_button", "Uninstall", "add_toast_to_div('MINDFulPluto.jl', 'Uninstalling intent...')")
+        uninstall_button_bind = @bind uninstall_button MINDFulPlutoGUI.get_html_button("uninstall_button", "Uninstall")
+        remove_button_bind = @bind remove_button MINDFulPlutoGUI.get_html_button("remove_button", "Remove")
 
         dev_mode_button_bind = @bind dev_mode_button MINDFulPlutoGUI.get_html_button("dev_mode_button", "Developer Mode")
+        intent_list_button_bind = @bind intent_list_button MINDFulPlutoGUI.get_html_button("intent_list_button", "Intent list")
 
         _intent_selection = @bind intent_selection MINDFulPlutoGUI.get_html_select("intent_selection_select", "Select Intent", [], "intent_selection_select")
         _wanted_pos = @bind wanted_pos MINDFulPlutoGUI.get_html_select("wanted_pos_select", "Position", ["2", "3"], "wanted_pos_select")
@@ -71,7 +73,7 @@ begin
         MINDFulPlutoGUI.get_dashboard_main_div(embed_display(_n1_btn), embed_display(_n1_sn), embed_display(_n2_btn), embed_display(_n2_sn),
             embed_display(create_intent_bind), embed_display(plot_selection_bind), embed_display(draw_button_bind), embed_display(compile_button_bind),
             embed_display(uncompile_button_bind), embed_display(install_button_bind), embed_display(uninstall_button_bind), embed_display(_intent_selection),
-            embed_display(_wanted_pos), embed_display(_topology))
+            embed_display(_wanted_pos), embed_display(_topology), embed_display(remove_button_bind))
     end
 end
 
@@ -103,6 +105,9 @@ MINDFulPlutoGUI.button_caller_wrapper("install_intent", install_button;)
 # ╔═╡ 56a90e03-6fb9-47ba-86d8-cbd96f7c66d7
 MINDFulPlutoGUI.button_caller_wrapper("uninstall_intent", uninstall_button;)
 
+# ╔═╡ 15db2153-781d-4a70-9cbb-a85c1774fbd3
+MINDFulPlutoGUI.button_caller_wrapper("remove_intent", remove_button;)
+
 # ╔═╡ 4fbae048-e383-41da-bb76-10d23241b15d
 MINDFulPlutoGUI.update_domain_and_node_list("domain", topology)
 
@@ -120,6 +125,12 @@ begin
     end
 end
 
+# ╔═╡ e9acb26d-07de-45d4-8bcd-88616842565d
+#= begin
+    install_button
+    MINDFulPlutoGUI.update_intent_list_html()
+end =#
+
 # ╔═╡ aa5dbee4-f5eb-4889-a0d5-8b9014570409
 MINDFulPlutoGUI.resize_cells()
 
@@ -130,7 +141,7 @@ MINDFulPlutoGUI.trigger_update_of_draw_cell(draw_button)
 MINDFulPlutoGUI.intent_list
 
 # ╔═╡ 77b3716e-aac5-47f0-8618-253afc079b4b
-[1,2,3,4,5]
+intent_states = [MINDFulPlutoGUI.get_intent_state(MINDFulPlutoGUI.intent_list[i]["ibns"][MINDFulPlutoGUI.intent_list[i]["sn"]], MINDFulPlutoGUI.intent_list[i]["id"]) for i in 1:length(MINDFulPlutoGUI.intent_list)]
 
 # ╔═╡ Cell order:
 # ╠═5145f6b7-ddb7-45ac-a3c7-fb30dc364f15
@@ -152,10 +163,12 @@ MINDFulPlutoGUI.intent_list
 # ╠═da567849-9f10-46ff-a8dd-c537b5a90048
 # ╠═d76778b2-fafb-4017-ad1e-3572ed4b799e
 # ╠═56a90e03-6fb9-47ba-86d8-cbd96f7c66d7
+# ╠═15db2153-781d-4a70-9cbb-a85c1774fbd3
 # ╠═4fbae048-e383-41da-bb76-10d23241b15d
 # ╠═04b12cc9-e83c-46c7-b3fb-12bd01a56c40
 # ╠═744c90ce-02a9-4924-874c-9de65209d557
 # ╠═8807bcad-8926-4ea0-9ba2-40ea47500a87
+# ╠═e9acb26d-07de-45d4-8bcd-88616842565d
 # ╠═aa5dbee4-f5eb-4889-a0d5-8b9014570409
 # ╠═c7fcbb44-29c2-471b-bab1-4d4b591840f4
 # ╠═daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
