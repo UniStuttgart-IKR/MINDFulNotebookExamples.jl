@@ -200,7 +200,7 @@ const wrapper = async () => {
 
 
 
-            await sleep(10);
+            await sleep(100);
 
         }
     }
