@@ -128,6 +128,31 @@ begin
     end
 end
 
+# ╔═╡ 0ed42b9e-dba7-40cb-b58d-7bd306dd384e
+begin
+	#get javascript values
+	viewport_height_bind = @bind viewport_height html"""<input type="number" id="viewportHeight" value="">"""
+	viewport_width_bind = @bind viewport_width html"""<input type="number" id="viewportWidth" value="">"""
+	window_dpr_bind = @bind window_dpr html"""<input type="number" id="windowDevicePixelRatio" value="">"""
+
+
+	@htl("""
+
+	$(embed_display(viewport_height_bind))
+	$(embed_display(viewport_width_bind))
+	$(embed_display(window_dpr_bind))
+	
+	""")
+end
+
+# ╔═╡ 01e839e5-8cb4-4402-a5a3-ff2fdc89c035
+begin
+	viewport_height, viewport_width, window_dpr
+	MINDFulPluto.viewport_settings["width"] = viewport_width
+	MINDFulPluto.viewport_settings["height"] = viewport_height
+	MINDFulPluto.viewport_settings["dpr"] = window_dpr
+end
+
 # ╔═╡ e9acb26d-07de-45d4-8bcd-88616842565d
 #= begin
     install_button
@@ -141,10 +166,10 @@ MINDFulPluto.resize_cells()
 MINDFulPluto.trigger_update_of_draw_cell(draw_button)
 
 # ╔═╡ daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
-MINDFulPluto.intent_list
+MINDFulPluto.viewport_settings
 
 # ╔═╡ 77b3716e-aac5-47f0-8618-253afc079b4b
-intent_states = [MINDFulPluto.get_intent_state(MINDFulPluto.intent_list[i]["ibns"][MINDFulPluto.intent_list[i]["sn"]], MINDFulPluto.intent_list[i]["id"]) for i in 1:length(MINDFulPluto.intent_list)]
+MINDFulPluto.intent_list
 
 # ╔═╡ Cell order:
 # ╠═5145f6b7-ddb7-45ac-a3c7-fb30dc364f15
@@ -172,6 +197,8 @@ intent_states = [MINDFulPluto.get_intent_state(MINDFulPluto.intent_list[i]["ibns
 # ╠═04b12cc9-e83c-46c7-b3fb-12bd01a56c40
 # ╠═744c90ce-02a9-4924-874c-9de65209d557
 # ╠═8807bcad-8926-4ea0-9ba2-40ea47500a87
+# ╠═0ed42b9e-dba7-40cb-b58d-7bd306dd384e
+# ╠═01e839e5-8cb4-4402-a5a3-ff2fdc89c035
 # ╠═e9acb26d-07de-45d4-8bcd-88616842565d
 # ╠═aa5dbee4-f5eb-4889-a0d5-8b9014570409
 # ╠═c7fcbb44-29c2-471b-bab1-4d4b591840f4

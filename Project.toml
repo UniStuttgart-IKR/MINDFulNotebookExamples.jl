@@ -1,4 +1,5 @@
 [deps]
+AbstractPlutoDingetjes = "6e696c72-6542-2067-7265-42206c756150"
 AttributeGraphs = "d091dd56-f8c5-469d-b7f7-ff847498145f"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 DiscreteEvents = "127e53a7-d08a-4bd9-afb0-daf0d2b65a85"
@@ -25,6 +26,7 @@ Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 
 [compat]
+MINDFulPluto = ">=0.1.0"
 GraphMakie = "0.5.5"
 MINDFul = "0.2"
 NestedGraphMakie = "0.1"
