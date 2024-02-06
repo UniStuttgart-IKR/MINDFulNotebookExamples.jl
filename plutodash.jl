@@ -50,83 +50,15 @@ end
 # ╔═╡ 1fbb319e-8a8e-40cc-acc2-58a5a07ac275
 begin
     begin
-        _n1_btn = @bind arg_node_1 MINDFulPluto.get_html_select("node_selection_select_1", "Node 1", ["1", "2", "3", "7"])
-        _n2_btn = @bind arg_node_2 MINDFulPluto.get_html_select("node_selection_select_2", "Node 2", ["1", "2", "3", "7"])
-        _n1_sn = @bind arg_domain_1 MINDFulPluto.get_html_select("domain_selection_select", "Domain 1", ["1", "2", "3", "7"])
-        _n2_sn = @bind arg_domain_2 MINDFulPluto.get_html_select("domain_selection_select", "Domain 2", ["1", "2", "3", "7"])
-
-        create_intent_bind = @bind create_intent MINDFulPluto.get_html_button("create_intent_button", "Create Intent")
-        _topology = @bind topology MINDFulPluto.get_html_select("topology_select", "Topology", ["4nets", "nobel-germany", "nobel-germany-france-topzoo"], "topology_select")
-
-        compile_button_bind = @bind compile_button MINDFulPluto.get_html_button("compile_button", "Compile", "add_toast_to_div('MINDFulPluto.jl', 'Compiling intent...')")
-        uncompile_button_bind = @bind uncompile_button MINDFulPluto.get_html_button("uncompile_button", "Uncompile")
-        install_button_bind = @bind install_button MINDFulPluto.get_html_button("install_button", "Install", "add_toast_to_div('MINDFulPluto.jl', 'Installing intent...')")
-        uninstall_button_bind = @bind uninstall_button MINDFulPluto.get_html_button("uninstall_button", "Uninstall")
-        remove_button_bind = @bind remove_button MINDFulPluto.get_html_button("remove_button", "Remove")
-
-        dev_mode_button_bind = @bind dev_mode_button MINDFulPluto.get_html_button("dev_mode_button", "Developer Mode")
-        intent_list_button_bind = @bind intent_list_button MINDFulPluto.get_html_button("intent_list_button", "Intent list")
-
-        _intent_selection = @bind intent_selection MINDFulPluto.get_html_select("intent_selection_select", "Select Intent", [], "intent_selection_select")
-        _wanted_pos = @bind wanted_pos MINDFulPluto.get_html_select("wanted_pos_select", "Position", ["2", "3"], "wanted_pos_select")
-        plot_selection_bind = @bind plot_selection MINDFulPluto.get_html_select("plot_selection_select", "Plotting type", ["intentplot", "ibnplot"])
-
-        draw_button_bind = @bind draw_button MINDFulPluto.get_html_button("draw_button", "Draw", "add_toast_to_div('MINDFulPluto.jl', 'Plotting Intent...')")
-
-        MINDFulPluto.get_dashboard_main_div(embed_display(_n1_btn), embed_display(_n1_sn), embed_display(_n2_btn), embed_display(_n2_sn),
-            embed_display(create_intent_bind), embed_display(plot_selection_bind), embed_display(draw_button_bind), embed_display(compile_button_bind),
-            embed_display(uncompile_button_bind), embed_display(install_button_bind), embed_display(uninstall_button_bind), embed_display(_intent_selection),
-            embed_display(_wanted_pos), embed_display(_topology), embed_display(remove_button_bind))
+        MINDFulPluto.get_dashboard_main_div()
     end
 end
-
-# ╔═╡ 05e59d51-ade8-4916-8e29-02a4a03c2295
-#Wrap parameters in env variables
-MINDFulPluto.wrap_in_variable(; selection_n1=arg_node_1, selection_n2=arg_node_2, selection_n1_sn=arg_domain_1, selection_n2_sn=arg_domain_2, selection_plot=plot_selection, selection_intent=intent_selection, selection_pos=wanted_pos, topology=topology)
-
-# ╔═╡ a2e91f7f-7df9-4daf-a0b7-cfadc83a601a
-MINDFulPluto.button_caller_wrapper("draw", "asd")
 
 # ╔═╡ 36ded27e-079a-4bed-9d94-abd6314ddca8
-MINDFulPluto.button_caller_wrapper("draw", "asd")
+MINDFulPluto.plot_intent()
 
 # ╔═╡ dcad27db-f258-4ac8-a17b-21397933a3a1
-MINDFulPluto.button_caller_wrapper("draw", "asd";)
-
-# ╔═╡ 06f0a5a3-b546-40e8-8e30-c6392ea25e3e
-MINDFulPluto.button_caller_wrapper("create_intent", create_intent;)
-
-# ╔═╡ 98709f18-9f50-4d13-ba9e-15780d62f2a2
-MINDFulPluto.button_caller_wrapper("compile_intent", compile_button;)
-
-# ╔═╡ da567849-9f10-46ff-a8dd-c537b5a90048
-MINDFulPluto.button_caller_wrapper("uncompile_intent", uncompile_button;)
-
-# ╔═╡ d76778b2-fafb-4017-ad1e-3572ed4b799e
-MINDFulPluto.button_caller_wrapper("install_intent", install_button;)
-
-# ╔═╡ 56a90e03-6fb9-47ba-86d8-cbd96f7c66d7
-MINDFulPluto.button_caller_wrapper("uninstall_intent", uninstall_button;)
-
-# ╔═╡ 15db2153-781d-4a70-9cbb-a85c1774fbd3
-MINDFulPluto.button_caller_wrapper("remove_intent", remove_button;)
-
-# ╔═╡ 4fbae048-e383-41da-bb76-10d23241b15d
-MINDFulPluto.update_domain_and_node_list("domain", topology)
-
-# ╔═╡ 04b12cc9-e83c-46c7-b3fb-12bd01a56c40
-MINDFulPluto.update_domain_and_node_list("node1", arg_domain_1)
-
-# ╔═╡ 744c90ce-02a9-4924-874c-9de65209d557
-MINDFulPluto.update_domain_and_node_list("node2", arg_domain_2)
-
-# ╔═╡ 8807bcad-8926-4ea0-9ba2-40ea47500a87
-begin
-	topology
-    if topology != "Topology"
-	    MINDFulPluto.send_toast("Loading topology $(topology)...")
-    end
-end
+MINDFulPluto.plot_intent()
 
 # ╔═╡ 0ed42b9e-dba7-40cb-b58d-7bd306dd384e
 begin
@@ -153,23 +85,32 @@ begin
 	MINDFulPluto.viewport_settings["dpr"] = window_dpr
 end
 
-# ╔═╡ e9acb26d-07de-45d4-8bcd-88616842565d
-#= begin
-    install_button
-    MINDFulPluto.update_intent_list_html()
-end =#
+# ╔═╡ 00af9143-eebf-4d20-9ab2-5038070efc66
+begin
+	#inputs for intent commands
+	intent_command_bind = @bind intent_command html"""<input type="text" id="intentCommandTextField" value="">"""
+	
+	@htl("""
+
+	$(embed_display(intent_command_bind))
+	
+	""")
+end
+
+# ╔═╡ 1921d610-5308-4c4f-8a2b-54a067024701
+MINDFulPluto.handle_command(intent_command)
 
 # ╔═╡ aa5dbee4-f5eb-4889-a0d5-8b9014570409
 MINDFulPluto.resize_cells()
 
-# ╔═╡ c7fcbb44-29c2-471b-bab1-4d4b591840f4
-MINDFulPluto.trigger_update_of_draw_cell(draw_button)
+# ╔═╡ 4838aca7-d253-42a7-9eb1-d3a74040d4af
+MINDFulPluto.update_width_devving()
 
 # ╔═╡ daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
-MINDFulPluto.viewport_settings
+MINDFulPluto.intent_list
 
 # ╔═╡ 77b3716e-aac5-47f0-8618-253afc079b4b
-MINDFulPluto.intent_list
+MINDFulPluto.draw_args
 
 # ╔═╡ Cell order:
 # ╠═5145f6b7-ddb7-45ac-a3c7-fb30dc364f15
@@ -183,24 +124,13 @@ MINDFulPluto.intent_list
 # ╠═957302ee-001b-4850-a89f-7ee256457860
 # ╠═68010739-8e28-44fe-b75d-2c9f9498b2a3
 # ╟─1fbb319e-8a8e-40cc-acc2-58a5a07ac275
-# ╠═05e59d51-ade8-4916-8e29-02a4a03c2295
-# ╟─a2e91f7f-7df9-4daf-a0b7-cfadc83a601a
 # ╟─36ded27e-079a-4bed-9d94-abd6314ddca8
 # ╟─dcad27db-f258-4ac8-a17b-21397933a3a1
-# ╠═06f0a5a3-b546-40e8-8e30-c6392ea25e3e
-# ╠═98709f18-9f50-4d13-ba9e-15780d62f2a2
-# ╠═da567849-9f10-46ff-a8dd-c537b5a90048
-# ╠═d76778b2-fafb-4017-ad1e-3572ed4b799e
-# ╠═56a90e03-6fb9-47ba-86d8-cbd96f7c66d7
-# ╠═15db2153-781d-4a70-9cbb-a85c1774fbd3
-# ╠═4fbae048-e383-41da-bb76-10d23241b15d
-# ╠═04b12cc9-e83c-46c7-b3fb-12bd01a56c40
-# ╠═744c90ce-02a9-4924-874c-9de65209d557
-# ╠═8807bcad-8926-4ea0-9ba2-40ea47500a87
 # ╠═0ed42b9e-dba7-40cb-b58d-7bd306dd384e
 # ╠═01e839e5-8cb4-4402-a5a3-ff2fdc89c035
-# ╠═e9acb26d-07de-45d4-8bcd-88616842565d
+# ╠═00af9143-eebf-4d20-9ab2-5038070efc66
+# ╠═1921d610-5308-4c4f-8a2b-54a067024701
 # ╠═aa5dbee4-f5eb-4889-a0d5-8b9014570409
-# ╠═c7fcbb44-29c2-471b-bab1-4d4b591840f4
+# ╠═4838aca7-d253-42a7-9eb1-d3a74040d4af
 # ╠═daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
 # ╠═77b3716e-aac5-47f0-8618-253afc079b4b
