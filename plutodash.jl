@@ -35,9 +35,6 @@ using HypertextLiteral
 # ╔═╡ e6a036b2-a202-40b8-ba97-b664d148b770
 using MINDFulPluto
 
-# ╔═╡ 05dc4c97-d28d-4cf0-8ed1-b1b8d879d779
-MINDFulPluto.insert_scripts()
-
 # ╔═╡ 957302ee-001b-4850-a89f-7ee256457860
 MINDFulPluto.insert_bootstrap()
 
@@ -106,6 +103,9 @@ MINDFulPluto.resize_cells()
 # ╔═╡ 4838aca7-d253-42a7-9eb1-d3a74040d4af
 MINDFulPluto.update_width_devving()
 
+# ╔═╡ 1f562bd9-17fe-49cb-83d0-11480eb4afca
+MINDFulPluto.insert_scripts()
+
 # ╔═╡ daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
 MINDFulPluto.intent_list
 
@@ -120,7 +120,6 @@ MINDFulPluto.draw_args
 # ╠═eb0ca9a4-7d10-4f77-ac7d-30d845bbfba4
 # ╠═8024c5f9-bfe8-4fae-a6e1-0364b5688950
 # ╠═e6a036b2-a202-40b8-ba97-b664d148b770
-# ╠═05dc4c97-d28d-4cf0-8ed1-b1b8d879d779
 # ╠═957302ee-001b-4850-a89f-7ee256457860
 # ╠═68010739-8e28-44fe-b75d-2c9f9498b2a3
 # ╟─1fbb319e-8a8e-40cc-acc2-58a5a07ac275
@@ -132,5 +131,6 @@ MINDFulPluto.draw_args
 # ╠═1921d610-5308-4c4f-8a2b-54a067024701
 # ╠═aa5dbee4-f5eb-4889-a0d5-8b9014570409
 # ╠═4838aca7-d253-42a7-9eb1-d3a74040d4af
+# ╠═1f562bd9-17fe-49cb-83d0-11480eb4afca
 # ╠═daceb10a-f60c-4f4f-b2ac-ff8bf68f8c8a
 # ╠═77b3716e-aac5-47f0-8618-253afc079b4b

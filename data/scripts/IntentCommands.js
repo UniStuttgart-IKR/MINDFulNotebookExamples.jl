@@ -26,6 +26,14 @@ function drawIntent() {
     const intent_index = document.querySelector("#intent_selection_select").selectedIndex;
     const plottingType = document.querySelector("#plot_selection_select").value;
     const position = document.querySelector("#wanted_pos_select").value;
+    const domain = document.querySelector("#domain_drawing_select").value;
 
-    sendIntentCommand(`draw_intent ${intent_index} ${plottingType} ${position}`)
+    sendIntentCommand(`draw_intent ${intent_index} ${plottingType} ${position} ${domain}`)
+}
+
+function updateDomainListDrawing() {
+    const intent_index = document.querySelector("#intent_selection_select").selectedIndex;
+    const plottingType = document.querySelector("#plot_selection_select").value;
+
+    sendIntentCommand(`update_domain_list_drawing ${intent_index} ${plottingType}`)
 }
