@@ -11,7 +11,6 @@ function createIntent() {
 
 function updateDomainList() {
     const topology = document.querySelector("#topology_select").value;
-
     sendIntentCommand(`update_domain_list ${topology}`)
 }
 
@@ -36,4 +35,19 @@ function updateDomainListDrawing() {
     const plottingType = document.querySelector("#plot_selection_select").value;
 
     sendIntentCommand(`update_domain_list_drawing ${intent_index} ${plottingType}`)
+}
+
+function removePlot() {
+    const position = document.querySelector("#wanted_pos_select").value;
+    console.log(position)
+    // Find all codeFolded elements
+    const plotDivs = document.querySelectorAll(".code_folded");
+    console.log(plotDivs);
+    // Find the position-th plotDiv (index 2+3)
+    const plotDiv = plotDivs[parseInt(position) + 1];
+    console.log(plotDiv);
+    // Find rich_output
+    const plutoShoulder = plotDiv.querySelector(".rich_output");
+    // Remove it
+    plutoShoulder.remove();
 }

@@ -1,6 +1,6 @@
 function getViewportSize() {
-    var viewportWidth;
-    var viewportHeight;
+    let viewportWidth;
+    let viewportHeight;
     // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
     if (typeof window.innerWidth != 'undefined') {
         viewportWidth = window.innerWidth,

@@ -94,6 +94,84 @@ function updateIntentTable(intent_names, intent_configs, intent_toplogies, inten
 
 }
 
+function updateDomainListJS(domain_names) {
+    console.log(domain_names)
+    //find domain list
+    let domain_lists = document.querySelectorAll(".domain_selection_select");
+
+    //for each domain list
+    domain_lists.forEach((domain_list, j) => {
+        //find out which option was selected in domain_list
+        let selected_value = domain_list.value;
+
+
+        //clear domain list except first option
+        while (domain_list.options.length > 1) {
+            domain_list.remove(1);
+        }
+
+
+        //add domains to domain list
+
+        domain_names.forEach((domain, i) => {
+            let option = document.createElement("option");
+            option.value = domain;
+            option.innerHTML = domain;
+            //check if domain was selected
+            if (selected_value != undefined) {
+                if (selected_value == domain) {
+                    option.selected = true;
+                }
+            }
+
+            domain_list.appendChild(option);
+
+        });
+    });
+
+    //reset domain list to first option
+    domain_lists.forEach((domain_list, j) => {
+        domain_list.value = domain_list.options[0].value;
+    });
+
+
+    add_toast_to_div('MINDFulPluto.jl', 'Topology loaded.')
+}
+
+function updateNodeListJS(nodes, nodeNumber) {
+    console.log(nodes)
+    //find node list
+    let node_list = document.querySelector(`.node_selection_select_${nodeNumber}`);
+
+
+    //find out which option was selected in node_list
+    let selected_value = node_list.value;
+
+
+    //clear node list except first option
+    while (node_list.options.length > 1) {
+        node_list.remove(1);
+    }
+
+
+    //add nodes to node list
+
+    nodes.forEach((node, i) => {
+        let option = document.createElement("option");
+        option.value = node;
+        option.innerHTML = node;
+        //check if node was selected
+        if (selected_value != undefined) {
+            if (selected_value == node) {
+                option.selected = true;
+            }
+        }
+
+        node_list.appendChild(option);
+
+    });
+}
+
 function updateDomainDrawingList(domains) {
     const domainDrawingList = document.querySelector("#domain_drawing_select");
 
@@ -174,10 +252,10 @@ function updateButtonAvailabilities() {
         domainDrawing.disabled = true;
     }
 
-    //TODO implement Remove button
-    //disable remove button
-    document.querySelector("#remove_intent").disabled = true;
+    //if position is selected, enable remove button
+    if (position.selectedIndex != 0) {
+        document.querySelector("#remove_plot").disabled = false;
+    } else {
+        document.querySelector("#remove_plot").disabled = true;
+    }
 }
-
-//run it initially
-updateButtonAvailabilities();

@@ -28,7 +28,7 @@ function add_toast_to_div(heading, message) {
         $(`#${random_id_string}`).on('shown.bs.toast', function() {
             $(`#${random_id_string} > .progress > .progress-bar`).each(function(i) {
                 // Todo: Create time variable from Toast
-                var displayTime = $('.toast').attr('data-bs-delay');
+                let displayTime = $('.toast').attr('data-bs-delay');
                 $(this).animate({
                     width: $(this).attr('aria-valuenow') + '%'
                 });

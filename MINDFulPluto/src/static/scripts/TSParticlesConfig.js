@@ -2,7 +2,7 @@ function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-const load_tsparticles = async () => {
+let load_tsparticles = async () => {
     await loadLinksPreset(tsParticles);
 
     await tsParticles.load("tsparticles", {
@@ -154,32 +154,37 @@ const load_tsparticles = async () => {
 };
 
 
-const wrapper = async () => {
+const tsparticlesWrapper = async () => {
+    //check if tsParticles div is already there
+    if (document.getElementById("tsparticles") !== null) {
+        return;
+    }
+
     while (true) {
         try {
             await load_tsparticles();
             break;
         }
         catch (e) {
-            console.log(e);
+            //console.log(e);
 
             if (e instanceof TypeError) {
-                console.log("TypeError, inserting again!");
+                console.log("TypeError, loading tsparticles again!");
 
-                var body = document.getElementsByTagName("body")[0];
+                let body = document.getElementsByTagName("body")[0];
 
                 //get src of scripts
                 src = [];
-                for (var i = 0; i < body.getElementsByTagName("script").length; i++) {
+                for (let i = 0; i < body.getElementsByTagName("script").length; i++) {
                     // if tsparticles in src
                     if (body.getElementsByTagName("script")[i].src.includes("tsparticles")) {
                         body.removeChild(body.getElementsByTagName("script")[i]);;
                     }
                 }
 
-                var body = document.querySelector("body");
+                body = document.querySelector("body");
 
-                var scripts = ["https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js",
+                let scripts = ["https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js",
                     "https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js",
                     "https://cdn.jsdelivr.net/npm/tsparticles-interaction-particles-links@2/tsparticles.interaction.particles.links.min.js",
                     "https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js",
@@ -192,7 +197,7 @@ const wrapper = async () => {
                     "https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2/tsparticles.preset.links.min.js"];
 
                 scripts.forEach((script, i) => {
-                    var script = document.createElement("script");
+                    script = document.createElement("script");
                     script.src = scripts[i];
                     body.appendChild(script);
                 });
@@ -205,7 +210,5 @@ const wrapper = async () => {
         }
     }
 };
-
-wrapper();
 
 
