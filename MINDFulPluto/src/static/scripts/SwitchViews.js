@@ -281,7 +281,7 @@ function reformatNotebook() {
         cell.style.borderRadius = '16px';
         cell.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
 
-        cell.style.padding = '20px 20px 20px 20px';
+        cell.style.padding = '1vw 1vw 1vw 1vw';
 
         //find element pluto-trafficlight
         cell.querySelector('pluto-trafficlight').style.display = 'none';

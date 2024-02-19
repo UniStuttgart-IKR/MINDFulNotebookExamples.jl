@@ -26,8 +26,8 @@ Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 
 [compat]
-MINDFulPluto = ">=0.1.0"
 GraphMakie = "0.5.5"
 MINDFul = "0.2"
+MINDFulPluto = "0.1"
 NestedGraphMakie = "0.1"
 julia = "1.9, 1.10"
