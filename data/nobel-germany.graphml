@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+    <key attr.name="ycoord" attr.type="double" for="node" id="ycoord" />
+    <key attr.name="xcoord" attr.type="double" for="node" id="xcoord" />
+    <key attr.name="routerports" attr.type="int" for="node" id="ports" />
+    <key attr.name="name" attr.type="string" for="node" id="name" />
+    <key attr.name="length" attr.type="double" for="edge" id="length"/>
+    <key attr.name="demand" attr.type="double" for="edge" id="demand">
+        <default>5</default>
+    </key>
+    <key attr.name="fiberslots" attr.type="int" for="edge" id="slots">
+        <default>320</default>
+    </key>
+    <key attr.name="oxc" attr.type="boolean" for="node" id="oxc">
+        <default>true</default>
+    </key>
+    <graph id="global-network" edgedefault="directed">
+        <node id="main">
+            <graph id="main" edgedefault="directed">
+                <node id="main:sw">
+                    <graph id="main:sw" edgedefault="directed">
+                        <node id="main:sw:Frankfurt">
+                            <data key="xcoord">8.66</data>
+                            <data key="ycoord">50.14</data>
+                            <data key="name">Frankfurt</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:sw:Ulm">
+                            <data key="xcoord">9.99</data>
+                            <data key="ycoord">48.4</data>
+                            <data key="name">Ulm</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:sw:Stuttgart">
+                            <data key="xcoord">9.12</data>
+                            <data key="ycoord">48.73</data>
+                            <data key="name">Stuttgart</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:sw:Karlsruhe">
+                            <data key="xcoord">8.41</data>
+                            <data key="ycoord">49.01</data>
+                            <data key="name">Karlsruhe</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:sw:Mannheim">
+                            <data key="xcoord">8.49</data>
+                            <data key="ycoord">49.49</data>
+                            <data key="name">Mannheim</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e8" source="main:sw:Frankfurt" target="main:sw:Mannheim">
+                            <data key="demand">10.0</data>
+                            <data key="length">73.29863420512697</data>
+                        </edge>
+                        <edge id="e25" source="main:sw:Ulm" target="main:sw:Stuttgart">
+                            <data key="length">73.78923875460328</data>
+                        </edge>
+                        <edge id="e30" source="main:sw:Stuttgart" target="main:sw:Ulm">
+                            <data key="demand">8.0</data>
+                            <data key="length">73.78923875460328</data>
+                        </edge>
+                        <edge id="e32" source="main:sw:Stuttgart" target="main:sw:Karlsruhe">
+                            <data key="length">60.54772436363469</data>
+                        </edge>
+                        <edge id="e33" source="main:sw:Karlsruhe" target="main:sw:Stuttgart">
+                            <data key="demand">4.0</data>
+                            <data key="length">60.54772436363469</data>
+                        </edge>
+                        <edge id="e34" source="main:sw:Karlsruhe" target="main:sw:Mannheim">
+                            <data key="demand">2.0</data>
+                            <data key="length">53.68849058591995</data>
+                        </edge>
+                        <edge id="e35" source="main:sw:Mannheim" target="main:sw:Frankfurt">
+                            <data key="length">73.29863420512697</data>
+                        </edge>
+                        <edge id="e36" source="main:sw:Mannheim" target="main:sw:Karlsruhe">
+                            <data key="length">53.68849058591995</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="main:so">
+                    <graph id="main:so" edgedefault="directed">
+                        <node id="main:so:Muenchen">
+                            <data key="xcoord">11.55</data>
+                            <data key="ycoord">48.15</data>
+                            <data key="name">Muenchen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:so:Nuernberg">
+                            <data key="xcoord">11.08</data>
+                            <data key="ycoord">49.45</data>
+                            <data key="name">Nuernberg</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e27" source="main:so:Nuernberg" target="main:so:Muenchen">
+                            <data key="length">148.5949428006042</data>
+                        </edge>
+                        <edge id="e23" source="main:so:Muenchen" target="main:so:Nuernberg">
+                            <data key="demand">6.0</data>
+                            <data key="length">148.5949428006042</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="main:ww">
+                    <graph id="main:ww" edgedefault="directed">
+                        <node id="main:ww:Essen">
+                            <data key="xcoord">7.0</data>
+                            <data key="ycoord">51.44</data>
+                            <data key="name">Essen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:ww:Dortmund">
+                            <data key="xcoord">7.48</data>
+                            <data key="ycoord">51.51</data>
+                            <data key="name">Dortmund</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:ww:Duesseldorf">
+                            <data key="xcoord">6.78</data>
+                            <data key="ycoord">51.22</data>
+                            <data key="name">Duesseldorf</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:ww:Koeln">
+                            <data key="xcoord">7.01</data>
+                            <data key="ycoord">50.92</data>
+                            <data key="name">Koeln</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e37" source="main:ww:Essen" target="main:ww:Dortmund">
+                            <data key="length">34.14303896179366</data>
+                        </edge>
+                        <edge id="e38" source="main:ww:Essen" target="main:ww:Duesseldorf">
+                            <data key="length">28.84561394790831</data>
+                        </edge>
+                        <edge id="e41" source="main:ww:Dortmund" target="main:ww:Essen">
+                            <data key="demand">8.0</data>
+                            <data key="length">34.14303896179366</data>
+                        </edge>
+                        <edge id="e42" source="main:ww:Dortmund" target="main:ww:Koeln">
+                            <data key="demand">6.0</data>
+                            <data key="length">73.31881696624325</data>
+                        </edge>
+                        <edge id="e43" source="main:ww:Duesseldorf" target="main:ww:Essen">
+                            <data key="demand">10.0</data>
+                            <data key="length">28.84561394790831</data>
+                        </edge>
+                        <edge id="e44" source="main:ww:Duesseldorf" target="main:ww:Koeln">
+                            <data key="demand">12.0</data>
+                            <data key="length">37.02761854643971</data>
+                        </edge>
+                        <edge id="e46" source="main:ww:Koeln" target="main:ww:Dortmund">
+                            <data key="length">73.31881696624325</data>
+                        </edge>
+                        <edge id="e47" source="main:ww:Koeln" target="main:ww:Duesseldorf">
+                            <data key="length">37.02761854643971</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="main:nw">
+                    <graph id="main:nw" edgedefault="directed">
+                        <node id="main:nw:Hannover">
+                            <data key="xcoord">9.8</data>
+                            <data key="ycoord">52.39</data>
+                            <data key="name">Hannover</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:nw:Hamburg">
+                            <data key="xcoord">10.08</data>
+                            <data key="ycoord">53.55</data>
+                            <data key="name">Hamburg</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:nw:Norden">
+                            <data key="xcoord">7.21</data>
+                            <data key="ycoord">53.6</data>
+                            <data key="name">Norden</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:nw:Bremen">
+                            <data key="xcoord">8.8</data>
+                            <data key="ycoord">53.08</data>
+                            <data key="name">Bremen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e1" source="main:nw:Hannover" target="main:nw:Hamburg">
+                            <data key="length">130.34153162994733</data>
+                        </edge>
+                        <edge id="e2" source="main:nw:Hannover" target="main:nw:Bremen">
+                            <data key="length">102.07547811577393</data>
+                        </edge>
+                        <edge id="e11" source="main:nw:Hamburg" target="main:nw:Hannover">
+                            <data key="demand">10.0</data>
+                            <data key="length">130.34153162994733</data>
+                        </edge>
+                        <edge id="e12" source="main:nw:Hamburg" target="main:nw:Bremen">
+                            <data key="length">99.80427126712999</data>
+                        </edge>
+                        <edge id="e14" source="main:nw:Norden" target="main:nw:Bremen">
+                            <data key="length">120.35574069858681</data>
+                        </edge>
+                        <edge id="e16" source="main:nw:Bremen" target="main:nw:Hannover">
+                            <data key="demand">6.0</data>
+                            <data key="length">102.07547811577393</data>
+                        </edge>
+                        <edge id="e17" source="main:nw:Bremen" target="main:nw:Hamburg">
+                            <data key="demand">6.0</data>
+                            <data key="length">99.80427126712999</data>
+                        </edge>
+                        <edge id="e18" source="main:nw:Bremen" target="main:nw:Norden">
+                            <data key="length">120.35574069858681</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="main:no">
+                    <graph id="main:no" edgedefault="directed">
+                        <node id="main:no:Berlin">
+                            <data key="xcoord">13.48</data>
+                            <data key="ycoord">52.52</data>
+                            <data key="name">Berlin</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="main:no:Leipzig">
+                            <data key="xcoord">12.38</data>
+                            <data key="ycoord">51.34</data>
+                            <data key="name">Leipzig</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e50" source="main:no:Leipzig" target="main:no:Berlin">
+                            <data key="length">151.3381958628939</data>
+                        </edge>
+                        <edge id="e21" source="main:no:Berlin" target="main:no:Leipzig">
+                            <data key="demand">14.0</data>
+                            <data key="length">151.3381958628939</data>
+                        </edge>
+                    </graph>
+                </node>
+                <edge id="e0" source="main:nw:Hannover" target="main:sw:Frankfurt">
+                    <data key="length">262.4517079640682</data>
+                </edge>
+                <edge id="e3" source="main:nw:Hannover" target="main:no:Berlin">
+                    <data key="length">249.74985488539141</data>
+                </edge>
+                <edge id="e4" source="main:nw:Hannover" target="main:ww:Dortmund">
+                    <data key="length">186.6845930800721</data>
+                </edge>
+                <edge id="e5" source="main:nw:Hannover" target="main:no:Leipzig">
+                    <data key="demand">10.0</data>
+                    <data key="length">212.14873577531685</data>
+                </edge>
+                <edge id="e6" source="main:sw:Frankfurt" target="main:nw:Hannover">
+                    <data key="demand">14.0</data>
+                    <data key="length">262.4517079640682</data>
+                </edge>
+                <edge id="e7" source="main:sw:Frankfurt" target="main:so:Nuernberg">
+                    <data key="demand">10.0</data>
+                    <data key="length">189.88325955448033</data>
+                </edge>
+                <edge id="e9" source="main:sw:Frankfurt" target="main:ww:Koeln">
+                    <data key="demand">12.0</data>
+                    <data key="length">145.33711284292391</data>
+                </edge>
+                <edge id="e10" source="main:sw:Frankfurt" target="main:no:Leipzig">
+                    <data key="demand">18.0</data>
+                    <data key="length">293.7697710915307</data>
+                </edge>
+                <edge id="e13" source="main:nw:Hamburg" target="main:no:Berlin">
+                    <data key="length">254.52315503142052</data>
+                </edge>
+                <edge id="e15" source="main:nw:Norden" target="main:ww:Dortmund">
+                    <data key="length">233.11268283805643</data>
+                </edge>
+                <edge id="e19" source="main:no:Berlin" target="main:nw:Hannover">
+                    <data key="demand">8.0</data>
+                    <data key="length">249.74985488539141</data>
+                </edge>
+                <edge id="e20" source="main:no:Berlin" target="main:nw:Hamburg">
+                    <data key="demand">8.0</data>
+                    <data key="length">254.52315503142052</data>
+                </edge>
+                <edge id="e22" source="main:so:Muenchen" target="main:sw:Ulm">
+                    <data key="demand">6.0</data>
+                    <data key="length">118.74733626580577</data>
+                </edge>
+                <edge id="e24" source="main:sw:Ulm" target="main:so:Muenchen">
+                    <data key="length">118.74733626580577</data>
+                </edge>
+                <edge id="e26" source="main:so:Nuernberg" target="main:sw:Frankfurt">
+                    <data key="length">189.88325955448033</data>
+                </edge>
+                <edge id="e28" source="main:so:Nuernberg" target="main:sw:Stuttgart">
+                    <data key="demand">6.0</data>
+                    <data key="length">163.63805711115788</data>
+                </edge>
+                <edge id="e29" source="main:so:Nuernberg" target="main:no:Leipzig">
+                    <data key="length">229.46481449045197</data>
+                </edge>
+                <edge id="e31" source="main:sw:Stuttgart" target="main:so:Nuernberg">
+                    <data key="length">163.63805711115788</data>
+                </edge>
+                <edge id="e39" source="main:ww:Dortmund" target="main:nw:Hannover">
+                    <data key="demand">6.0</data>
+                    <data key="length">186.6845930800721</data>
+                </edge>
+                <edge id="e40" source="main:ww:Dortmund" target="main:nw:Norden">
+                    <data key="length">233.11268283805643</data>
+                </edge>
+                <edge id="e45" source="main:ww:Koeln" target="main:sw:Frankfurt">
+                    <data key="length">145.33711284292391</data>
+                </edge>
+                <edge id="e48" source="main:no:Leipzig" target="main:nw:Hannover">
+                    <data key="length">212.14873577531685</data>
+                </edge>
+                <edge id="e49" source="main:no:Leipzig" target="main:sw:Frankfurt">
+                    <data key="length">293.7697710915307</data>
+                </edge>
+                <edge id="e51" source="main:no:Leipzig" target="main:so:Nuernberg">
+                    <data key="demand">6.0</data>
+                    <data key="length">229.46481449045197</data>
+                </edge>
+            </graph>
+        </node>
+    </graph>
+</graphml>

@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+    <key attr.name="ycoord" attr.type="double" for="node" id="ycoord"/>
+    <key attr.name="xcoord" attr.type="double" for="node" id="xcoord"/>
+    <key attr.name="routerports" attr.type="int" for="node" id="ports">
+        <default>10</default>
+    </key>
+    <key attr.name="name" attr.type="string" for="node" id="name"/>
+    <key attr.name="length" attr.type="double" for="edge" id="length"/>
+    <key attr.name="demand" attr.type="double" for="edge" id="demand">
+        <default>5</default>
+    </key>
+    <key attr.name="fiberslots" attr.type="int" for="edge" id="slots">
+        <default>320</default>
+    </key>
+    <key attr.name="oxc" attr.type="boolean" for="node" id="oxc">
+        <default>true</default>
+    </key>
+    <graph id="global-network" edgedefault="directed">
+        <node id="nobelgermany">
+            <graph id="nobelgermany" edgedefault="directed">
+                <node id="nobelgermany:sw">
+                    <graph id="nobelgermany:sw" edgedefault="directed">
+                        <node id="nobelgermany:sw:Frankfurt">
+                            <data key="xcoord">8.66</data>
+                            <data key="ycoord">50.14</data>
+                            <data key="name">Frankfurt</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:sw:Ulm">
+                            <data key="xcoord">9.99</data>
+                            <data key="ycoord">48.4</data>
+                            <data key="name">Ulm</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:sw:Stuttgart">
+                            <data key="xcoord">9.12</data>
+                            <data key="ycoord">48.73</data>
+                            <data key="name">Stuttgart</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:sw:Karlsruhe">
+                            <data key="xcoord">8.41</data>
+                            <data key="ycoord">49.01</data>
+                            <data key="name">Karlsruhe</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:sw:Mannheim">
+                            <data key="xcoord">8.49</data>
+                            <data key="ycoord">49.49</data>
+                            <data key="name">Mannheim</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e8" source="nobelgermany:sw:Frankfurt" target="nobelgermany:sw:Mannheim">
+                            <data key="demand">10.0</data>
+                            <data key="length">73.29863420512697</data>
+                        </edge>
+                        <edge id="e25" source="nobelgermany:sw:Ulm" target="nobelgermany:sw:Stuttgart">
+                            <data key="length">73.78923875460328</data>
+                        </edge>
+                        <edge id="e30" source="nobelgermany:sw:Stuttgart" target="nobelgermany:sw:Ulm">
+                            <data key="demand">8.0</data>
+                            <data key="length">73.78923875460328</data>
+                        </edge>
+                        <edge id="e32" source="nobelgermany:sw:Stuttgart" target="nobelgermany:sw:Karlsruhe">
+                            <data key="length">60.54772436363469</data>
+                        </edge>
+                        <edge id="e33" source="nobelgermany:sw:Karlsruhe" target="nobelgermany:sw:Stuttgart">
+                            <data key="demand">4.0</data>
+                            <data key="length">60.54772436363469</data>
+                        </edge>
+                        <edge id="e34" source="nobelgermany:sw:Karlsruhe" target="nobelgermany:sw:Mannheim">
+                            <data key="demand">2.0</data>
+                            <data key="length">53.68849058591995</data>
+                        </edge>
+                        <edge id="e35" source="nobelgermany:sw:Mannheim" target="nobelgermany:sw:Frankfurt">
+                            <data key="length">73.29863420512697</data>
+                        </edge>
+                        <edge id="e36" source="nobelgermany:sw:Mannheim" target="nobelgermany:sw:Karlsruhe">
+                            <data key="length">53.68849058591995</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="nobelgermany:so">
+                    <graph id="nobelgermany:so" edgedefault="directed">
+                        <node id="nobelgermany:so:Muenchen">
+                            <data key="xcoord">11.55</data>
+                            <data key="ycoord">48.15</data>
+                            <data key="name">Muenchen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:so:Nuernberg">
+                            <data key="xcoord">11.08</data>
+                            <data key="ycoord">49.45</data>
+                            <data key="name">Nuernberg</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e27" source="nobelgermany:so:Nuernberg" target="nobelgermany:so:Muenchen">
+                            <data key="length">148.5949428006042</data>
+                        </edge>
+                        <edge id="e23" source="nobelgermany:so:Muenchen" target="nobelgermany:so:Nuernberg">
+                            <data key="demand">6.0</data>
+                            <data key="length">148.5949428006042</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="nobelgermany:ww">
+                    <graph id="nobelgermany:ww" edgedefault="directed">
+                        <node id="nobelgermany:ww:Essen">
+                            <data key="xcoord">7.0</data>
+                            <data key="ycoord">51.44</data>
+                            <data key="name">Essen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:ww:Dortmund">
+                            <data key="xcoord">7.48</data>
+                            <data key="ycoord">51.51</data>
+                            <data key="name">Dortmund</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:ww:Duesseldorf">
+                            <data key="xcoord">6.78</data>
+                            <data key="ycoord">51.22</data>
+                            <data key="name">Duesseldorf</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:ww:Koeln">
+                            <data key="xcoord">7.01</data>
+                            <data key="ycoord">50.92</data>
+                            <data key="name">Koeln</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e37" source="nobelgermany:ww:Essen" target="nobelgermany:ww:Dortmund">
+                            <data key="length">34.14303896179366</data>
+                        </edge>
+                        <edge id="e38" source="nobelgermany:ww:Essen" target="nobelgermany:ww:Duesseldorf">
+                            <data key="length">28.84561394790831</data>
+                        </edge>
+                        <edge id="e41" source="nobelgermany:ww:Dortmund" target="nobelgermany:ww:Essen">
+                            <data key="demand">8.0</data>
+                            <data key="length">34.14303896179366</data>
+                        </edge>
+                        <edge id="e42" source="nobelgermany:ww:Dortmund" target="nobelgermany:ww:Koeln">
+                            <data key="demand">6.0</data>
+                            <data key="length">73.31881696624325</data>
+                        </edge>
+                        <edge id="e43" source="nobelgermany:ww:Duesseldorf" target="nobelgermany:ww:Essen">
+                            <data key="demand">10.0</data>
+                            <data key="length">28.84561394790831</data>
+                        </edge>
+                        <edge id="e44" source="nobelgermany:ww:Duesseldorf" target="nobelgermany:ww:Koeln">
+                            <data key="demand">12.0</data>
+                            <data key="length">37.02761854643971</data>
+                        </edge>
+                        <edge id="e46" source="nobelgermany:ww:Koeln" target="nobelgermany:ww:Dortmund">
+                            <data key="length">73.31881696624325</data>
+                        </edge>
+                        <edge id="e47" source="nobelgermany:ww:Koeln" target="nobelgermany:ww:Duesseldorf">
+                            <data key="length">37.02761854643971</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="nobelgermany:nw">
+                    <graph id="nobelgermany:nw" edgedefault="directed">
+                        <node id="nobelgermany:nw:Hannover">
+                            <data key="xcoord">9.8</data>
+                            <data key="ycoord">52.39</data>
+                            <data key="name">Hannover</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:nw:Hamburg">
+                            <data key="xcoord">10.08</data>
+                            <data key="ycoord">53.55</data>
+                            <data key="name">Hamburg</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:nw:Norden">
+                            <data key="xcoord">7.21</data>
+                            <data key="ycoord">53.6</data>
+                            <data key="name">Norden</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:nw:Bremen">
+                            <data key="xcoord">8.8</data>
+                            <data key="ycoord">53.08</data>
+                            <data key="name">Bremen</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e1" source="nobelgermany:nw:Hannover" target="nobelgermany:nw:Hamburg">
+                            <data key="length">130.34153162994733</data>
+                        </edge>
+                        <edge id="e2" source="nobelgermany:nw:Hannover" target="nobelgermany:nw:Bremen">
+                            <data key="length">102.07547811577393</data>
+                        </edge>
+                        <edge id="e11" source="nobelgermany:nw:Hamburg" target="nobelgermany:nw:Hannover">
+                            <data key="demand">10.0</data>
+                            <data key="length">130.34153162994733</data>
+                        </edge>
+                        <edge id="e12" source="nobelgermany:nw:Hamburg" target="nobelgermany:nw:Bremen">
+                            <data key="length">99.80427126712999</data>
+                        </edge>
+                        <edge id="e14" source="nobelgermany:nw:Norden" target="nobelgermany:nw:Bremen">
+                            <data key="length">120.35574069858681</data>
+                        </edge>
+                        <edge id="e16" source="nobelgermany:nw:Bremen" target="nobelgermany:nw:Hannover">
+                            <data key="demand">6.0</data>
+                            <data key="length">102.07547811577393</data>
+                        </edge>
+                        <edge id="e17" source="nobelgermany:nw:Bremen" target="nobelgermany:nw:Hamburg">
+                            <data key="demand">6.0</data>
+                            <data key="length">99.80427126712999</data>
+                        </edge>
+                        <edge id="e18" source="nobelgermany:nw:Bremen" target="nobelgermany:nw:Norden">
+                            <data key="length">120.35574069858681</data>
+                        </edge>
+                    </graph>
+                </node>
+                <node id="nobelgermany:no">
+                    <graph id="nobelgermany:no" edgedefault="directed">
+                        <node id="nobelgermany:no:Berlin">
+                            <data key="xcoord">13.48</data>
+                            <data key="ycoord">52.52</data>
+                            <data key="name">Berlin</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <node id="nobelgermany:no:Leipzig">
+                            <data key="xcoord">12.38</data>
+                            <data key="ycoord">51.34</data>
+                            <data key="name">Leipzig</data>
+                            <data key="ports">10</data>
+                        </node>
+                        <edge id="e50" source="nobelgermany:no:Leipzig" target="nobelgermany:no:Berlin">
+                            <data key="length">151.3381958628939</data>
+                        </edge>
+                        <edge id="e21" source="nobelgermany:no:Berlin" target="nobelgermany:no:Leipzig">
+                            <data key="demand">14.0</data>
+                            <data key="length">151.3381958628939</data>
+                        </edge>
+                    </graph>
+                </node>
+                <edge id="e0" source="nobelgermany:nw:Hannover" target="nobelgermany:sw:Frankfurt">
+                    <data key="length">262.4517079640682</data>
+                </edge>
+                <edge id="e3" source="nobelgermany:nw:Hannover" target="nobelgermany:no:Berlin">
+                    <data key="length">249.74985488539141</data>
+                </edge>
+                <edge id="e4" source="nobelgermany:nw:Hannover" target="nobelgermany:ww:Dortmund">
+                    <data key="length">186.6845930800721</data>
+                </edge>
+                <edge id="e5" source="nobelgermany:nw:Hannover" target="nobelgermany:no:Leipzig">
+                    <data key="demand">10.0</data>
+                    <data key="length">212.14873577531685</data>
+                </edge>
+                <edge id="e6" source="nobelgermany:sw:Frankfurt" target="nobelgermany:nw:Hannover">
+                    <data key="demand">14.0</data>
+                    <data key="length">262.4517079640682</data>
+                </edge>
+                <edge id="e7" source="nobelgermany:sw:Frankfurt" target="nobelgermany:so:Nuernberg">
+                    <data key="demand">10.0</data>
+                    <data key="length">189.88325955448033</data>
+                </edge>
+                <edge id="e9" source="nobelgermany:sw:Frankfurt" target="nobelgermany:ww:Koeln">
+                    <data key="demand">12.0</data>
+                    <data key="length">145.33711284292391</data>
+                </edge>
+                <edge id="e10" source="nobelgermany:sw:Frankfurt" target="nobelgermany:no:Leipzig">
+                    <data key="demand">18.0</data>
+                    <data key="length">293.7697710915307</data>
+                </edge>
+                <edge id="e13" source="nobelgermany:nw:Hamburg" target="nobelgermany:no:Berlin">
+                    <data key="length">254.52315503142052</data>
+                </edge>
+                <edge id="e15" source="nobelgermany:nw:Norden" target="nobelgermany:ww:Dortmund">
+                    <data key="length">233.11268283805643</data>
+                </edge>
+                <edge id="e19" source="nobelgermany:no:Berlin" target="nobelgermany:nw:Hannover">
+                    <data key="demand">8.0</data>
+                    <data key="length">249.74985488539141</data>
+                </edge>
+                <edge id="e20" source="nobelgermany:no:Berlin" target="nobelgermany:nw:Hamburg">
+                    <data key="demand">8.0</data>
+                    <data key="length">254.52315503142052</data>
+                </edge>
+                <edge id="e22" source="nobelgermany:so:Muenchen" target="nobelgermany:sw:Ulm">
+                    <data key="demand">6.0</data>
+                    <data key="length">118.74733626580577</data>
+                </edge>
+                <edge id="e24" source="nobelgermany:sw:Ulm" target="nobelgermany:so:Muenchen">
+                    <data key="length">118.74733626580577</data>
+                </edge>
+                <edge id="e26" source="nobelgermany:so:Nuernberg" target="nobelgermany:sw:Frankfurt">
+                    <data key="length">189.88325955448033</data>
+                </edge>
+                <edge id="e28" source="nobelgermany:so:Nuernberg" target="nobelgermany:sw:Stuttgart">
+                    <data key="demand">6.0</data>
+                    <data key="length">163.63805711115788</data>
+                </edge>
+                <edge id="e29" source="nobelgermany:so:Nuernberg" target="nobelgermany:no:Leipzig">
+                    <data key="length">229.46481449045197</data>
+                </edge>
+                <edge id="e31" source="nobelgermany:sw:Stuttgart" target="nobelgermany:so:Nuernberg">
+                    <data key="length">163.63805711115788</data>
+                </edge>
+                <edge id="e39" source="nobelgermany:ww:Dortmund" target="nobelgermany:nw:Hannover">
+                    <data key="demand">6.0</data>
+                    <data key="length">186.6845930800721</data>
+                </edge>
+                <edge id="e40" source="nobelgermany:ww:Dortmund" target="nobelgermany:nw:Norden">
+                    <data key="length">233.11268283805643</data>
+                </edge>
+                <edge id="e45" source="nobelgermany:ww:Koeln" target="nobelgermany:sw:Frankfurt">
+                    <data key="length">145.33711284292391</data>
+                </edge>
+                <edge id="e48" source="nobelgermany:no:Leipzig" target="nobelgermany:nw:Hannover">
+                    <data key="length">212.14873577531685</data>
+                </edge>
+                <edge id="e49" source="nobelgermany:no:Leipzig" target="nobelgermany:sw:Frankfurt">
+                    <data key="length">293.7697710915307</data>
+                </edge>
+                <edge id="e51" source="nobelgermany:no:Leipzig" target="nobelgermany:so:Nuernberg">
+                    <data key="demand">6.0</data>
+                    <data key="length">229.46481449045197</data>
+                </edge>
+            </graph>
+        </node>
+        <node id="francetopzoo">
+            <graph id="francetopzoo" edgedefault="directed">
+                <node id="francetopzoo:main">
+                    <graph id="francetopzoo:main" edgedefault="directed">
+                        <node id="francetopzoo:main:0">
+                            <data key="ycoord">44.83333</data>
+                            <data key="xcoord">-0.56667</data>
+                            <data key="name">Bordeaux</data>
+                        </node>
+                        <node id="francetopzoo:main:1">
+                            <data key="ycoord">43.3</data>
+                            <data key="xcoord">-0.36667</data>
+                            <data key="name">Pau</data>
+                        </node>
+                        <node id="francetopzoo:main:2">
+                            <data key="ycoord">47.91667</data>
+                            <data key="xcoord">1.9</data>
+                            <data key="name">Orleans</data>
+                        </node>
+                        <node id="francetopzoo:main:3">
+                            <data key="ycoord">45.83153</data>
+                            <data key="xcoord">1.2578</data>
+                            <data key="name">Limoges</data>
+                        </node>
+                        <node id="francetopzoo:main:4">
+                            <data key="ycoord">45.78333</data>
+                            <data key="xcoord">3.08333</data>
+                            <data key="name">Clermont-Ferrand</data>
+                        </node>
+                        <node id="francetopzoo:main:5">
+                            <data key="ycoord">47.31667</data>
+                            <data key="xcoord">5.01667</data>
+                            <data key="name">Dijon</data>
+                        </node>
+                        <node id="francetopzoo:main:6">
+                            <data key="ycoord">43.60426</data>
+                            <data key="xcoord">1.44367</data>
+                            <data key="name">Toulouse</data>
+                        </node>
+                        <node id="francetopzoo:main:7">
+                            <data key="ycoord">43.6</data>
+                            <data key="xcoord">3.88333</data>
+                            <data key="name">Montpellier</data>
+                        </node>
+                        <node id="francetopzoo:main:8">
+                            <data key="ycoord">47.25</data>
+                            <data key="xcoord">6.03333</data>
+                            <data key="name">Besancon</data>
+                        </node>
+                        <node id="francetopzoo:main:9">
+                            <data key="ycoord">43.7</data>
+                            <data key="xcoord">5.75</data>
+                            <data key="name">Cadarache</data>
+                        </node>
+                        <node id="francetopzoo:main:10">
+                            <data key="ycoord">43.3</data>
+                            <data key="xcoord">5.4</data>
+                            <data key="name">Marseille</data>
+                        </node>
+                        <node id="francetopzoo:main:11">
+                            <data key="ycoord">43.70313</data>
+                            <data key="xcoord">7.26608</data>
+                            <data key="name">Nice</data>
+                        </node>
+                        <node id="francetopzoo:main:12">
+                            <data key="ycoord">45.16667</data>
+                            <data key="xcoord">5.71667</data>
+                            <data key="name">Grenoble</data>
+                        </node>
+                        <node id="francetopzoo:main:13">
+                            <data key="ycoord">45.75</data>
+                            <data key="xcoord">4.85</data>
+                            <data key="name">Lyon</data>
+                        </node>
+                        <node id="francetopzoo:main:14">
+                            <data key="ycoord">48.85341</data>
+                            <data key="xcoord">2.3488</data>
+                            <data key="name">Paris</data>
+                        </node>
+                        <node id="francetopzoo:main:15">
+                            <data key="ycoord">42.3</data>
+                            <data key="xcoord">9.15</data>
+                            <data key="name">Corte</data>
+                        </node>
+                        <node id="francetopzoo:main:16">
+                            <data key="ycoord">47.21725</data>
+                            <data key="xcoord">-1.55336</data>
+                            <data key="name">Nantes</data>
+                        </node>
+                        <node id="francetopzoo:main:17">
+                            <data key="ycoord">46.58333</data>
+                            <data key="xcoord">0.33333</data>
+                            <data key="name">Poiters</data>
+                        </node>
+                        <node id="francetopzoo:main:18">
+                            <data key="ycoord">48.58333</data>
+                            <data key="xcoord">7.75</data>
+                            <data key="name">Strasbourg</data>
+                        </node>
+                        <node id="francetopzoo:main:19">
+                            <data key="ycoord">48.68333</data>
+                            <data key="xcoord">6.2</data>
+                            <data key="name">Nancy</data>
+                        </node>
+                        <node id="francetopzoo:main:20">
+                            <data key="ycoord">49.25</data>
+                            <data key="xcoord">4.03333</data>
+                            <data key="name">Reims</data>
+                        </node>
+                        <node id="francetopzoo:main:21">
+                            <data key="ycoord">49.41794</data>
+                            <data key="xcoord">2.82606</data>
+                            <data key="name">Compiegne</data>
+                        </node>
+                        <node id="francetopzoo:main:22">
+                            <data key="ycoord">50.63333</data>
+                            <data key="xcoord">3.06667</data>
+                            <data key="name">Lille</data>
+                        </node>
+                        <node id="francetopzoo:main:23">
+                            <data key="ycoord">49.44313</data>
+                            <data key="xcoord">1.09932</data>
+                            <data key="name">Rouen</data>
+                        </node>
+                        <node id="francetopzoo:main:24">
+                            <data key="ycoord">49.18585</data>
+                            <data key="xcoord">-0.35912</data>
+                            <data key="name">Caen</data>
+                        </node>
+                        <node id="francetopzoo:main:25">
+                            <data key="ycoord">48.08333</data>
+                            <data key="xcoord">-1.68333</data>
+                            <data key="name">Rennes</data>
+                        </node>
+                        <edge id="francetopzoo:main:0-francetopzoo:main:17" source="francetopzoo:main:0" target="francetopzoo:main:17"/>
+                        <edge id="francetopzoo:main:17-francetopzoo:main:0" source="francetopzoo:main:17" target="francetopzoo:main:0"/>
+
+                        <edge id="francetopzoo:main:0-francetopzoo:main:1" source="francetopzoo:main:0" target="francetopzoo:main:1"/>
+                        <edge id="francetopzoo:main:1-francetopzoo:main:0" source="francetopzoo:main:1" target="francetopzoo:main:0"/>
+
+                        <edge id="francetopzoo:main:0-francetopzoo:main:6" source="francetopzoo:main:0" target="francetopzoo:main:6"/>
+                        <edge id="francetopzoo:main:6-francetopzoo:main:0" source="francetopzoo:main:6" target="francetopzoo:main:0"/>
+
+                        <edge id="francetopzoo:main:1-francetopzoo:main:6" source="francetopzoo:main:1" target="francetopzoo:main:6"/>
+                        <edge id="francetopzoo:main:6-francetopzoo:main:1" source="francetopzoo:main:6" target="francetopzoo:main:1"/>
+
+                        <edge id="francetopzoo:main:2-francetopzoo:main:17" source="francetopzoo:main:2" target="francetopzoo:main:17"/>
+                        <edge id="francetopzoo:main:17-francetopzoo:main:2" source="francetopzoo:main:17" target="francetopzoo:main:2"/>
+
+                        <edge id="francetopzoo:main:2-francetopzoo:main:14" source="francetopzoo:main:2" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:2" source="francetopzoo:main:14" target="francetopzoo:main:2"/>
+
+                        <edge id="francetopzoo:main:3-francetopzoo:main:17" source="francetopzoo:main:3" target="francetopzoo:main:17"/>
+                        <edge id="francetopzoo:main:17-francetopzoo:main:3" source="francetopzoo:main:17" target="francetopzoo:main:3"/>
+
+                        <edge id="francetopzoo:main:3-francetopzoo:main:4" source="francetopzoo:main:3" target="francetopzoo:main:4"/>
+                        <edge id="francetopzoo:main:4-francetopzoo:main:3" source="francetopzoo:main:4" target="francetopzoo:main:3"/>
+
+                        <edge id="francetopzoo:main:4-francetopzoo:main:13" source="francetopzoo:main:4" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:4" source="francetopzoo:main:13" target="francetopzoo:main:4"/>
+
+                        <edge id="francetopzoo:main:5-francetopzoo:main:8" source="francetopzoo:main:5" target="francetopzoo:main:8"/>
+                        <edge id="francetopzoo:main:8-francetopzoo:main:5" source="francetopzoo:main:8" target="francetopzoo:main:5"/>
+
+                        <edge id="francetopzoo:main:5-francetopzoo:main:13" source="francetopzoo:main:5" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:5" source="francetopzoo:main:13" target="francetopzoo:main:5"/>
+
+                        <edge id="francetopzoo:main:6-francetopzoo:main:7" source="francetopzoo:main:6" target="francetopzoo:main:7"/>
+                        <edge id="francetopzoo:main:7-francetopzoo:main:6" source="francetopzoo:main:7" target="francetopzoo:main:6"/>
+
+                        <edge id="francetopzoo:main:7-francetopzoo:main:10" source="francetopzoo:main:7" target="francetopzoo:main:10"/>
+                        <edge id="francetopzoo:main:10-francetopzoo:main:7" source="francetopzoo:main:10" target="francetopzoo:main:7"/>
+
+                        <edge id="francetopzoo:main:7-francetopzoo:main:13" source="francetopzoo:main:7" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:7" source="francetopzoo:main:13" target="francetopzoo:main:7"/>
+
+                        <edge id="francetopzoo:main:8-francetopzoo:main:18" source="francetopzoo:main:8" target="francetopzoo:main:18"/>
+                        <edge id="francetopzoo:main:18-francetopzoo:main:8" source="francetopzoo:main:18" target="francetopzoo:main:8"/>
+
+                        <edge id="francetopzoo:main:8-francetopzoo:main:13" source="francetopzoo:main:8" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:8" source="francetopzoo:main:13" target="francetopzoo:main:8"/>
+
+                        <edge id="francetopzoo:main:9-francetopzoo:main:13" source="francetopzoo:main:9" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:9" source="francetopzoo:main:13" target="francetopzoo:main:9"/>
+
+                        <edge id="francetopzoo:main:10-francetopzoo:main:13" source="francetopzoo:main:10" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:10" source="francetopzoo:main:13" target="francetopzoo:main:10"/>
+
+                        <edge id="francetopzoo:main:10-francetopzoo:main:13" source="francetopzoo:main:10" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:10" source="francetopzoo:main:13" target="francetopzoo:main:10"/>
+
+                        <edge id="francetopzoo:main:11-francetopzoo:main:14" source="francetopzoo:main:11" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:11" source="francetopzoo:main:14" target="francetopzoo:main:11"/>
+
+                        <edge id="francetopzoo:main:12-francetopzoo:main:14" source="francetopzoo:main:12" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:12" source="francetopzoo:main:14" target="francetopzoo:main:12"/>
+
+                        <edge id="francetopzoo:main:13-francetopzoo:main:14" source="francetopzoo:main:13" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:13" source="francetopzoo:main:14" target="francetopzoo:main:13"/>
+
+                        <edge id="francetopzoo:main:13-francetopzoo:main:14" source="francetopzoo:main:13" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:13" source="francetopzoo:main:14" target="francetopzoo:main:13"/>
+
+                        <edge id="francetopzoo:main:9-francetopzoo:main:10" source="francetopzoo:main:9" target="francetopzoo:main:10"/>
+                        <edge id="francetopzoo:main:10-francetopzoo:main:9" source="francetopzoo:main:10" target="francetopzoo:main:9"/>
+
+                        <edge id="francetopzoo:main:10-francetopzoo:main:11" source="francetopzoo:main:10" target="francetopzoo:main:11"/>
+                        <edge id="francetopzoo:main:11-francetopzoo:main:10" source="francetopzoo:main:11" target="francetopzoo:main:10"/>
+
+                        <edge id="francetopzoo:main:10-francetopzoo:main:15" source="francetopzoo:main:10" target="francetopzoo:main:15"/>
+                        <edge id="francetopzoo:main:15-francetopzoo:main:10" source="francetopzoo:main:15" target="francetopzoo:main:10"/>
+
+                        <edge id="francetopzoo:main:11-francetopzoo:main:12" source="francetopzoo:main:11" target="francetopzoo:main:12"/>
+                        <edge id="francetopzoo:main:12-francetopzoo:main:11" source="francetopzoo:main:12" target="francetopzoo:main:11"/>
+
+                        <edge id="francetopzoo:main:12-francetopzoo:main:13" source="francetopzoo:main:12" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:12" source="francetopzoo:main:13" target="francetopzoo:main:12"/>
+
+                        <edge id="francetopzoo:main:19-francetopzoo:main:13" source="francetopzoo:main:19" target="francetopzoo:main:13"/>
+                        <edge id="francetopzoo:main:13-francetopzoo:main:19" source="francetopzoo:main:13" target="francetopzoo:main:19"/>
+
+                        <edge id="francetopzoo:main:19-francetopzoo:main:14" source="francetopzoo:main:19" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:19" source="francetopzoo:main:14" target="francetopzoo:main:19"/>
+
+                        <edge id="francetopzoo:main:13-francetopzoo:main:14" source="francetopzoo:main:13" target="francetopzoo:main:14"/>
+                        <edge id="francetopzoo:main:14-francetopzoo:main:13" source="francetopzoo:main:14" target="francetopzoo:main:13"/>
+
+                        <edge id="francetopzoo:main:14-francetopzoo:main:17" source="francetopzoo:main:14" target="francetopzoo:main:17"/>
+                        <edge id="francetopzoo:main:17-francetopzoo:main:14" source="francetopzoo:main:17" target="francetopzoo:main:14"/>
+
+                        <edge id="francetopzoo:main:14-francetopzoo:main:20" source="francetopzoo:main:14" target="francetopzoo:main:20"/>
+                        <edge id="francetopzoo:main:20-francetopzoo:main:14" source="francetopzoo:main:20" target="francetopzoo:main:14"/>
+
+                        <edge id="francetopzoo:main:14-francetopzoo:main:21" source="francetopzoo:main:14" target="francetopzoo:main:21"/>
+                        <edge id="francetopzoo:main:21-francetopzoo:main:14" source="francetopzoo:main:21" target="francetopzoo:main:14"/>
+
+                        <edge id="francetopzoo:main:14-francetopzoo:main:22" source="francetopzoo:main:14" target="francetopzoo:main:22"/>
+                        <edge id="francetopzoo:main:22-francetopzoo:main:14" source="francetopzoo:main:22" target="francetopzoo:main:14"/>
+
+                        <edge id="francetopzoo:main:14-francetopzoo:main:23" source="francetopzoo:main:14" target="francetopzoo:main:23"/>
+                        <edge id="francetopzoo:main:23-francetopzoo:main:14" source="francetopzoo:main:23" target="francetopzoo:main:14"/>
+
+                        <edge id="francetopzoo:main:16-francetopzoo:main:17" source="francetopzoo:main:16" target="francetopzoo:main:17"/>
+                        <edge id="francetopzoo:main:17-francetopzoo:main:16" source="francetopzoo:main:17" target="francetopzoo:main:16"/>
+
+                        <edge id="francetopzoo:main:16-francetopzoo:main:25" source="francetopzoo:main:16" target="francetopzoo:main:25"/>
+                        <edge id="francetopzoo:main:25-francetopzoo:main:16" source="francetopzoo:main:25" target="francetopzoo:main:16"/>
+
+                        <edge id="francetopzoo:main:18-francetopzoo:main:19" source="francetopzoo:main:18" target="francetopzoo:main:19"/>
+                        <edge id="francetopzoo:main:19-francetopzoo:main:18" source="francetopzoo:main:19" target="francetopzoo:main:18"/>
+
+                        <edge id="francetopzoo:main:19-francetopzoo:main:20" source="francetopzoo:main:19" target="francetopzoo:main:20"/>
+                        <edge id="francetopzoo:main:20-francetopzoo:main:19" source="francetopzoo:main:20" target="francetopzoo:main:19"/>
+
+                        <edge id="francetopzoo:main:21-francetopzoo:main:22" source="francetopzoo:main:21" target="francetopzoo:main:22"/>
+                        <edge id="francetopzoo:main:22-francetopzoo:main:21" source="francetopzoo:main:22" target="francetopzoo:main:21"/>
+
+                        <edge id="francetopzoo:main:23-francetopzoo:main:24" source="francetopzoo:main:23" target="francetopzoo:main:24"/>
+                        <edge id="francetopzoo:main:24-francetopzoo:main:23" source="francetopzoo:main:24" target="francetopzoo:main:23"/>
+
+                        <edge id="francetopzoo:main:24-francetopzoo:main:25" source="francetopzoo:main:24" target="francetopzoo:main:25"/>
+                        <edge id="francetopzoo:main:25-francetopzoo:main:24" source="francetopzoo:main:25" target="francetopzoo:main:24"/>
+                    </graph>
+                </node>
+            </graph>
+        </node>
+        <edge id="nobelgermany:sw:Karlsruhe-francetopzoo:main:18" source="nobelgermany:sw:Karlsruhe" target="francetopzoo:main:18"/>
+        <edge id="francetopzoo:main:18-nobelgermany:sw:Karlsruhe" source="francetopzoo:main:18" target="nobelgermany:sw:Karlsruhe"/>
+
+        <edge id="nobelgermany:sw:Frankfurt-francetopzoo:main:20" source="nobelgermany:sw:Frankfurt" target="francetopzoo:main:20"/>
+        <edge id="francetopzoo:main:20-nobelgermany:sw:Frankfurt" source="francetopzoo:main:20" target="nobelgermany:sw:Frankfurt"/>
+    </graph>
+</graphml>
